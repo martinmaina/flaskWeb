@@ -1,0 +1,54 @@
+<!DOctype html>
+<html>
+<head>
+{% block head %}
+<title> {% block title %}{% endblock %} </title>
+<link rel="icon" href="{{ url_for('static', filename='tux1.png') }}" type="image/ico">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ {% endblock %}
+ </head>
+<body>
+<div id="main-nav">
+    <nav>
+    <img src="{{ url_for('static', filename='penguinlogo.png') }}" height=70px >
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('signin') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('add_post') }}">Add Post</a></li>
+            <li><a href="{{ url_for('my_posts') }}">My Posts</a></li>
+            <li><a href="{{ url_for('posts') }}">Posts</a></li>
+        </ul>
+
+    </nav>
+</div>
+<center>
+{% block body %}
+
+{% endblock body %}  
+</center>
+{% if error %}
+    <p class="flashed"><b style="color:red">Error:</b> {{ error }} </p>
+{% endif %}
+{% for messages  in get_flashed_messages() %}
+    <p class="flashed"> {{ messages }} </p>
+{% endfor %}
+<footer>
+    <div id="footer">
+    <img src="{{ url_for('static', filename='debianlogo1.png') }}" height=70px;
+    <center>
+        <div id="footer-nav">
+            <ul>
+                <li><a href="{{ url_for('aboutme') }}">About We</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('moreinfo') }}">More Info</a></li>
+                <li><a href="{{ url_for('contactus') }}">Contact us</a></li>
+            </ul>
+        </div>
+    </center>
+    </div>
+</footer>
+
+</body>
+</html>

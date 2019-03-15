@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="newPost">
+        <h1>New Post</h1>
+        <form action="/addPost" method="post" >
+            <label for="author"><b>Author</b></label>
+            <input type="text" id="author" name="author" placeholder="Author Name" required autofocus>
+            <label for ="name"><b>Title</b></label>
+            <input type="text" id="name" name="title" placeholder="Title of your Post" required ><br>
+            <label for ="post"><b>Post</b></label><br>
+            <textarea name="post" id="post" placeholder="Enter your Post here" rows=15 cols=80></textarea><br>
+            <input type=submit value=Post>
+        </form>
+    </div>
+
+{% endblock body %}

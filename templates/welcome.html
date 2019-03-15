@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}Welcome{% endblock %}
+
+
+{% block body %}
+    <h1>Welcome {{ name }} !!</h1>
+    <p id="block">
+        This site, we are talking about git. <br>You can read the posts. But if you want to add a new post, you have to <b><a href=" {{ url_for('signin') }}"> Sign Up</a></b>. Enjoy!
+
+    </p>
+    </div>
+{% endblock body %}
